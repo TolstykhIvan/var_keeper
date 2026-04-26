@@ -14,7 +14,7 @@ jobs:
         run: |
           chmod +x ./test/unit-tests.sh
           ./test/unit-tests.sh
-
+        
   integration_testing:
     needs: unit_testing
     runs-on: self-hosted
@@ -39,7 +39,7 @@ jobs:
           ./test/integration-tests.sh
       - name: Stop app
         run: kill -15 `cat app_pid`
-
+          
   mega_hard_testing:
     needs: [unit_testing, integration_testing]
     runs-on: self-hosted
